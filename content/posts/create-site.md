@@ -147,14 +147,22 @@ summary = 'Создаем сайт на Github Pages с помощью Hugo'
 В файле `create-site.md` меняем `attachments/` на `/posts/attachments/`
 
 Сохраняем изменения
-```bash
+```
 git add .
 git commit -m 'Add index page, first post'
 git push
 ..\hugo.exe
+```
+![](/posts/attachments/Pasted%20image%2020241202130357.png)
+```
 pushd public
 git add .
 git commit -m 'Publish first post'
 git push
 popd
 ```
+![](/posts/attachments/Pasted%20image%2020241202130423.png)
+
+
+Проверяем доступность
+![](/posts/attachments/Pasted%20image%2020241202130531.png)
