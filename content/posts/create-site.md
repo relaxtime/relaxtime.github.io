@@ -1,7 +1,7 @@
 +++
 date = '2024-12-02T12:39:26+03:00'
 draft = false
-title = 'Создаем сайт на Github Pages с помощью Hugo'
+title = 'Github Pages with Hugo'
 summary = 'Создаем сайт на Github Pages с помощью Hugo'
 +++
 
