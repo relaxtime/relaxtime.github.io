@@ -55,7 +55,7 @@
           ·
         </span>
         <span>
-          347 words
+          346 words
         </span>
         <span class="split">
           ·
@@ -97,12 +97,8 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-add -l
 </span></span></code></pre></div><p>Удалить все ключи из ssh-агента</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-add -D
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span>bash
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Записываем ssh-ключ в агент
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span>bash
-</span></span><span style="display:flex;"><span>ssh-add D:<span style="color:#ae81ff">\h</span>ugo_0.139.3_windows-amd64<span style="color:#ae81ff">\r</span>elaxtime
+</span></span></code></pre></div><p>Записываем ssh-ключ в агент</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-add D:<span style="color:#ae81ff">\h</span>ugo_0.139.3_windows-amd64<span style="color:#ae81ff">\r</span>elaxtime
 </span></span></code></pre></div><p><p class="markdown-image">
   <img src="/posts/attachments/Pasted%20image%2020241202121336.png" alt=""  />
 </p></p>
@@ -137,7 +133,7 @@
 </span></span></code></pre></div><p><p class="markdown-image">
   <img src="/posts/attachments/Pasted%20image%2020241202122100.png" alt=""  />
 </p></p>
-<p>Чтобы не было ошибок с social, нужно в файле <code>C:\Users\1\Desktop\hugo_0.139.3_windows-amd64\relaxtime.github.io\themes\mini\layouts\partials\footer.html</code> изменить <code>.Site.Social</code> на <code>.Site.Params.Social</code></p>
+<p>Чтобы не было ошибок с social, нужно в файле <code>D:\hugo_0.139.3_windows-amd64\relaxtime.github.io\themes\mini\layouts\partials\footer.html</code> изменить <code>.Site.Social</code> на <code>.Site.Params.Social</code></p>
 <p>Генерируем сайт</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>..<span style="color:#ae81ff">\h</span>ugo.exe
 </span></span></code></pre></div><p>Загружаем на GitHub</p>
@@ -165,21 +161,21 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Текст
 </span></span></code></pre></div><p>Для медиа создаем директорию  <code>D:\hugo_0.139.3_windows-amd64\relaxtime.github.io\content\posts\attachments</code>
-В файле <code>create-site.md</code> меняем <code>attachments/</code> на <code>/posts/attachments/</code></p>
+Ссылка на медиа указывается в таком виде <code>![](/posts/attachments/name.png)</code></p>
 <p>Сохраняем изменения</p>
-<pre tabindex="0"><code>git add .
-git commit -m &#39;Add index page, first post&#39;
-git push
-..\hugo.exe
-</code></pre><p><p class="markdown-image">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#39;Add index page, first post&#39;</span>
+</span></span><span style="display:flex;"><span>git push
+</span></span><span style="display:flex;"><span>..<span style="color:#ae81ff">\h</span>ugo.exe
+</span></span></code></pre></div><p><p class="markdown-image">
   <img src="/posts/attachments/Pasted%20image%2020241202130357.png" alt=""  />
 </p></p>
-<pre tabindex="0"><code>pushd public
-git add .
-git commit -m &#39;Publish first post&#39;
-git push
-popd
-</code></pre><p><p class="markdown-image">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pushd public
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#39;Publish first post&#39;</span>
+</span></span><span style="display:flex;"><span>git push
+</span></span><span style="display:flex;"><span>popd
+</span></span></code></pre></div><p><p class="markdown-image">
   <img src="/posts/attachments/Pasted%20image%2020241202130423.png" alt=""  />
 </p></p>
 <p>Проверяем доступность
