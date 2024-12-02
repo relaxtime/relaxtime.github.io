@@ -1,5 +1,5 @@
 baseURL = 'https://relaxtime.github.io/'
 languageCode = 'en-us'
-title = 'Рекомендации по результатам оценки защищенности'
+title = 'Рекомендации по результатам оценки защищенности информационных ресурсов'
 theme = 'mini'
 publishdir = './public/'
