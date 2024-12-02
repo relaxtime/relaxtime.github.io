@@ -33,14 +33,17 @@ ssh-keygen -t ed25519 -C "relaxtimezzz@gmail.com"
 type relaxtime.pub
 ```
 ![](/posts/attachments/Pasted%20image%2020241202120711.png)
+![](/posts/attachments/Pasted%20image%2020241202141011.png)
 
-Сгенерированные ключи relaxtime и relaxtime.pub перемещаем в другую директорию
+
+Сгенерированные ключи `relaxtime` и `relaxtime.pub` перемещаем, например, в директорию `D:\hugo_0.139.3_windows-amd64`
 
 Запускаем ssh-агент от имени администратора
 ```bash
 Set-Service -Name ssh-agent -StartupType Manual
 Start-Service ssh-agent
 ```
+
 Посмотреть все ключи в ssh-агенте
 ```bash
 ssh-add -l
@@ -64,19 +67,19 @@ git push -u origin master
 
 ![](/posts/attachments/Pasted%20image%2020241202121742.png)
 
-Создаем ветку devel, в которой будем хранить кодовую базу, исходники из которых генерируется сайт
+Создаем ветку `devel`, в которой будем хранить кодовую базу (исходники из которых генерируется сайт)
 
 ```bash
 git checkout -b devel
 ```
 
-Добавляем все файлы проекта в ветку devel
+Добавляем все файлы проекта в ветку `devel`
 ```bash
 git add --all .
 git commit -m 'Initial commit'
 ```
 
-Отправляем изменения из ветки devel в GitHub
+Отправляем изменения из ветки `devel` в GitHub
 ```bash
 git push -u origin devel
 ```
@@ -87,7 +90,7 @@ git push -u origin devel
 git submodule add https://github.com/nodejh/hugo-theme-mini.git themes/mini
 ```
 
-Содержимое файла hugo.toml:
+Содержимое файла `hugo.toml`:
 ```bash
 baseURL = 'https://relaxtime.github.io/'
 languageCode = 'ru-ru'
@@ -96,8 +99,7 @@ theme = 'mini'
 publishdir = './public/'
 ```
 
-
-Исходный код и сам сайт хранятся в разных ветках (devel и master соответственно). Переключаться между ними и переносить изменения - неудобно. Поэтому подключим ветку `master` в рабочую директорию в каталог `public` командами:
+Исходный код и сам сайт хранятся в разных ветках (`devel` и `master` соответственно). Переключаться между ними и переносить изменения - неудобно. Поэтому подключим ветку `master` в рабочую директорию в каталог `public`
 ```bash
 git worktree add -B master public origin/master
 echo "public" >> .gitignore
@@ -130,7 +132,7 @@ popd
 ..\hugo.exe new posts/create-site.md
 ```
 
-Содержимое create-site.md:
+Содержимое файла `create-site.md`:
 ```bash
 +++
 date = '2024-12-02T07:13:31+03:00'
@@ -143,7 +145,7 @@ summary = 'Создаем сайт на Github Pages с помощью Hugo'
 ```
 
 Для медиа создаем директорию  `D:\hugo_0.139.3_windows-amd64\relaxtime.github.io\content\posts\attachments`
-Ссылка на медиа указывается в таком виде `![](/posts/attachments/name.png)`
+Ссылку на медиа указываем в таком виде `![](/posts/attachments/name.png)`
 
 Сохраняем изменения
 ```bash
@@ -152,7 +154,9 @@ git commit -m 'Add index page, first post'
 git push
 ..\hugo.exe
 ```
+
 ![](/posts/attachments/Pasted%20image%2020241202130357.png)
+
 ```bash
 pushd public
 git add .
@@ -160,8 +164,8 @@ git commit -m 'Publish first post'
 git push
 popd
 ```
+
 ![](/posts/attachments/Pasted%20image%2020241202130423.png)
 
-
-Проверяем доступность
+Проверяем доступность сайта
 ![](/posts/attachments/Pasted%20image%2020241202130531.png)
