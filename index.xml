@@ -6,10 +6,17 @@
     <description>Recent content on Test Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Dec 2024 12:39:26 +0300</lastBuildDate>
+    <lastBuildDate>Mon, 02 Dec 2024 18:19:27 +0300</lastBuildDate>
     <atom:link href="https://relaxtime.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Создаем сайт на Github Pages с помощью Hugo</title>
+      <title>Protected Users</title>
+      <link>https://relaxtime.github.io/posts/protected-users/</link>
+      <pubDate>Mon, 02 Dec 2024 18:19:27 +0300</pubDate>
+      <guid>https://relaxtime.github.io/posts/protected-users/</guid>
+      <description>О необходимости включать привилегированных пользователей домена в группу Protected Users</description>
+    </item>
+    <item>
+      <title>Github Pages with Hugo</title>
       <link>https://relaxtime.github.io/posts/create-site/</link>
       <pubDate>Mon, 02 Dec 2024 12:39:26 +0300</pubDate>
       <guid>https://relaxtime.github.io/posts/create-site/</guid>
