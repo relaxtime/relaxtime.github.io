@@ -49,8 +49,7 @@ ssh-add -l
 Удалить все ключи из ssh-агента
 ```bash
 ssh-add -D
-
-```bash
+```
 
 Записываем ssh-ключ в агент
 ```bash
@@ -107,7 +106,7 @@ git commit -m 'Add .gitignore'
 ```
 ![](/posts/attachments/Pasted%20image%2020241202122100.png)
 
-Чтобы не было ошибок с social, нужно в файле `C:\Users\1\Desktop\hugo_0.139.3_windows-amd64\relaxtime.github.io\themes\mini\layouts\partials\footer.html` изменить `.Site.Social` на `.Site.Params.Social`
+Чтобы не было ошибок с social, нужно в файле `D:\hugo_0.139.3_windows-amd64\relaxtime.github.io\themes\mini\layouts\partials\footer.html` изменить `.Site.Social` на `.Site.Params.Social`
 
 Генерируем сайт
 ```bash
@@ -144,17 +143,17 @@ summary = 'Создаем сайт на Github Pages с помощью Hugo'
 ```
 
 Для медиа создаем директорию  `D:\hugo_0.139.3_windows-amd64\relaxtime.github.io\content\posts\attachments`
-В файле `create-site.md` меняем `attachments/` на `/posts/attachments/`
+Ссылка на медиа указывается в таком виде `![](/posts/attachments/name.png)`
 
 Сохраняем изменения
-```
+```bash
 git add .
 git commit -m 'Add index page, first post'
 git push
 ..\hugo.exe
 ```
 ![](/posts/attachments/Pasted%20image%2020241202130357.png)
-```
+```bash
 pushd public
 git add .
 git commit -m 'Publish first post'
