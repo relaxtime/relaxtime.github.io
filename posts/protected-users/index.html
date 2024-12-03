@@ -55,13 +55,13 @@
           ·
         </span>
         <span>
-          118 words
+          279 words
         </span>
         <span class="split">
           ·
         </span>
         <span>
-          1 minute read
+          2 minute read
         </span>
     </div>
 
@@ -77,7 +77,9 @@
 <p><strong>Комментарии</strong>
 Включение привилегированных пользователей домена в группу Protected Users способно значительно затруднить злоумышленнику развитие атаки, направленной на получение учетных данных указанных пользователей.</p>
 <p><strong>Рассмотрим преимущества</strong></p>
-<p><strong>Члены этой группы могут аутентифицироваться только по протоколу Kerberos. NTLM и CredSSP не работают.</strong></p>
+<ol>
+<li>Члены этой группы могут аутентифицироваться только по протоколу Kerberos. NTLM и CredSSP не работают.</li>
+</ol>
 <p>По умолчанию RDP использует NTLM-аутентификацию. При подключении по протоколу RDP учетные данные кэшируются на целевой машине, и могут быть получены из процесса <code>lsass</code> с помощью таких инструментов, как <code>mimikatz</code>.</p>
 <p><p class="markdown-image">
   <img src="/posts/attachments/Pasted%20image%2020241202174230.png" alt=""  />
@@ -86,6 +88,38 @@
 <p><p class="markdown-image">
   <img src="/posts/attachments/Pasted%20image%2020241202175742.png" alt=""  />
 </p></p>
+<ol start="2">
+<li>Для пользователей этой группы в протоколе Kerberos при предварительной проверке подлинности не могут использоваться слабые алгоритмы шифрования, такие как DES или RC4 (требуется поддержка как минимум AES).</li>
+</ol>
+<p>Предварительная аутентификация в Active Directory требует от запрашивающего пользователя предоставить свой секретный ключ (DES, RC4, AES128 или AES256), полученный из пароля пользователя. Другими словами запрашивающий пользователь должен подтвердить предварительную аутентификацию, отправив временную метку, зашифрованную его собственными учетными данными.  Злоумышленник в результате атаки, направленной на перехват сетевого трафика (ARP spoofing, ICMP redirect, поддельный DHCP сервер, IPv6 spoofing) может перехватить сообщения предварительной аутентификации и попытаться взломать зашифрованные временные метки, чтобы получить пароль пользователя.</p>
+<p> При атаке ARP Spoofing злоумышленник может отслеживать сообщения предварительной аутентификации с помощью утилиты wireshark</p>
+<p>Если используется алгоритм шифрования DES
+<p class="markdown-image">
+  <img src="/posts/attachments/Pasted%20image%2020241203192551.png" alt=""  />
+</p></p>
+<p>Приведем хэш к типу</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$krb5pa$23$des$DENYDC$$32d396a914a4d0a78e979ba75d4ff53c1db7294141760fee05e434c12ecf8d5b9aa5839e09a2244893aff5f384f79c37883f154a
+</span></span></code></pre></div><p>Расшифровать можно следующим образом</p>
+<p><p class="markdown-image">
+  <img src="/posts/attachments/Pasted%20image%2020241203225924.png" alt=""  />
+</p>
+<p class="markdown-image">
+  <img src="/posts/attachments/Pasted%20image%2020241203230322.png" alt=""  />
+</p></p>
+<p>Если используется алгоритм шифрования AES</p>
+<p><p class="markdown-image">
+  <img src="/posts/attachments/Pasted%20image%2020241203185616.png" alt=""  />
+</p></p>
+<p>Приведем хэш к типу</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$krb5pa$18$eddard.stark$NORTH.SEVENKINGDOMS.LOCAL$eacb91bde2a606c8f1b92a8752abba702371cb8bcf8bf233ced7e58532a31f60f0a989e6523d77229ab0adf2668b36c453ac6cd2f0036bf3
+</span></span></code></pre></div><p>Расшифровать можно следующим образом</p>
+<p><p class="markdown-image">
+  <img src="/posts/attachments/Pasted%20image%2020241203234022.png" alt=""  />
+</p>
+<p class="markdown-image">
+  <img src="/posts/attachments/Pasted%20image%2020241203234239.png" alt=""  />
+</p></p>
+<p>Результаты бенчмарков на Nvidia RTX 3080: 1 351 000 000 хэшей в секунду DES против 960 000 хэшей в секунду AES</p>
 
     </div>
 
