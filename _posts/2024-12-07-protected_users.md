@@ -178,9 +178,6 @@ impacket-getST -additional-ticket eddard.stark@host_CASTELBLACK@NORTH.SEVENKINGD
 ![](/images/protected_users/Pasted%20image%2020241207003916.png)
 
 Источники:
-
 https://habr.com/ru/companies/tomhunter/articles/683924/
-
 https://habr.com/ru/articles/433566/
-
 https://www.thehacker.recipes/ad/movement/kerberos/delegations/constrained
