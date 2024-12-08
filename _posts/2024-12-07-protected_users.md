@@ -7,16 +7,16 @@ image: /images/vecteezy_knights-protecting-the-castle_.jpg
 
 О необходимости включения привилегированных пользователей домена в группу Protected Users
 
-**Недостаток**
+#### Недостаток
 Привилегированные пользователи домена не включены в группу Protected Users.
 
-**Рекомендации**
+#### Рекомендации
 Включить привилегированных пользователей домена в группу Protected Users.
 
-**Комментарии**
+#### Комментарии
 Включение привилегированных пользователей домена в группу Protected Users способно значительно затруднить злоумышленнику развитие атаки, направленной на получение учетных данных указанных пользователей.
 
-**Рассмотрим преимущества**
+#### Рассмотрим преимущества
 
 **1. Члены этой группы могут аутентифицироваться только по протоколу Kerberos. NTLM и CredSSP не работают.**
 
@@ -24,7 +24,7 @@ image: /images/vecteezy_knights-protecting-the-castle_.jpg
 
 ![](/images/protected_users/Pasted%20image%2020241202174230.png)
 
-В случае добавления пользователя в группу Protected Users сервис lsass не хранит NTLM-хеш пароля пользователя. Злоумышленник не сможет им воспользоваться c целью перемещения по ЛВС или взломать для получения пароля в открытом виде.
+В случае добавления пользователя в группу Protected Users сервис `lsass` не хранит NTLM-хеш пароля пользователя. Злоумышленник не сможет им воспользоваться c целью перемещения по ЛВС или взломать для получения пароля в открытом виде.
 
 ![](/images/protected_users/Pasted%20image%2020241202175742.png)
 
@@ -182,3 +182,7 @@ impacket-getST -additional-ticket eddard.stark@host_CASTELBLACK@NORTH.SEVENKINGD
 https://habr.com/ru/companies/tomhunter/articles/683924/
 https://habr.com/ru/articles/433566/
 https://www.thehacker.recipes/ad/movement/kerberos/delegations/constrained
+
+Картинка:
+
+https://www.vecteezy.com/vector-art/3521075-knights-protecting-the-castle
