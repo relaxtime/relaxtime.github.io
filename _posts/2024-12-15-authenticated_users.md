@@ -2,7 +2,7 @@
 layout: post
 title:  "Authenticated Users"
 categories: jekyll update
-image: /images/scale_1200.jfif
+image: /images/suslik.jpg
 ---
 
 Об ограничении доступа к критически важным учетным записям домена
